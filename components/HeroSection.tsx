@@ -71,7 +71,7 @@ export default function HeroSection() {
             <div className="absolute inset-0 rounded-full bg-white opacity-10 blur-[60px] scale-[1.8] pointer-events-none" />
             <div className="absolute inset-0 rounded-full bg-[#00E5FF] opacity-20 blur-[100px] scale-[2.2] pointer-events-none" />
             {/* Overflow-hidden crops the bottom 42% (TEKTONE text) leaving only the icon */}
-            <div className="relative overflow-hidden h-52 sm:h-64 md:h-80">
+            <div className="relative overflow-hidden h-40 sm:h-48 md:h-60">
               <Image
                 src="/logo.webp"
                 alt="TEKTONE icon"
