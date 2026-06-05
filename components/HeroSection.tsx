@@ -70,18 +70,21 @@ export default function HeroSection() {
             {/* Glow behind logo */}
             <div className="absolute inset-0 rounded-full bg-white opacity-10 blur-[60px] scale-[1.8] pointer-events-none" />
             <div className="absolute inset-0 rounded-full bg-[#00E5FF] opacity-20 blur-[100px] scale-[2.2] pointer-events-none" />
-            <Image
-              src="/logo.webp"
-              alt="TEKTONE"
-              width={560}
-              height={280}
-              className="relative h-56 sm:h-64 md:h-72 w-auto object-contain"
-              style={{
-                filter:
-                  "brightness(1.6) contrast(1.1) drop-shadow(0 0 24px rgba(255,255,255,0.25)) drop-shadow(0 0 60px rgba(0,229,255,0.35))",
-              }}
-              priority
-            />
+            {/* Overflow-hidden crops the bottom ~32% (TEKTONE text) leaving only the icon */}
+            <div className="relative overflow-hidden h-40 sm:h-48 md:h-56">
+              <Image
+                src="/logo.webp"
+                alt="TEKTONE icon"
+                width={560}
+                height={560}
+                className="h-[calc(100%/0.68)] w-auto object-contain object-top"
+                style={{
+                  filter:
+                    "brightness(1.6) contrast(1.1) drop-shadow(0 0 24px rgba(255,255,255,0.25)) drop-shadow(0 0 60px rgba(0,229,255,0.35))",
+                }}
+                priority
+              />
+            </div>
           </div>
         </motion.div>
 
