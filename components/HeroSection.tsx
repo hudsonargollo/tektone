@@ -77,7 +77,7 @@ export default function HeroSection() {
                 alt="TEKTONE icon"
                 width={700}
                 height={700}
-                className="h-[calc(100%/0.58)] w-auto object-contain object-top"
+                className="h-[calc(100%/0.63)] w-auto object-contain object-top"
                 style={{
                   filter:
                     "brightness(1.6) contrast(1.1) drop-shadow(0 0 24px rgba(255,255,255,0.25)) drop-shadow(0 0 60px rgba(0,229,255,0.35))",
