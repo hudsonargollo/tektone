@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
 
 export default function Navbar() {
   const { scrollY } = useScroll();
@@ -26,16 +25,9 @@ export default function Navbar() {
       />
 
       <div className="relative max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="flex items-center gap-2 shrink-0">
-          <Image
-            src="/logo.webp"
-            alt="TEKTONE"
-            width={180}
-            height={90}
-            className="h-14 w-auto object-contain"
-            priority
-          />
+        {/* Wordmark */}
+        <a href="#" className="shrink-0 text-white font-black text-xl tracking-[0.12em] uppercase">
+          TEKTONE
         </a>
 
         {/* Nav links */}

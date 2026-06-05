@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import Image from "next/image";
 
 const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
@@ -56,10 +57,31 @@ export default function HeroSection() {
       </svg>
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-20">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-24">
+        {/* Logo */}
+        <motion.div
+          custom={0}
+          variants={fadeUp}
+          initial="hidden"
+          animate="show"
+          className="flex justify-center mb-10"
+        >
+          <div className="relative">
+            <div className="absolute inset-0 rounded-full bg-[#00E5FF] opacity-15 blur-[80px] scale-[2] pointer-events-none" />
+            <Image
+              src="/logo.webp"
+              alt="TEKTONE"
+              width={400}
+              height={200}
+              className="relative h-40 sm:h-48 w-auto object-contain drop-shadow-[0_0_48px_rgba(0,229,255,0.3)]"
+              priority
+            />
+          </div>
+        </motion.div>
+
         {/* Headline */}
         <motion.h1
-          custom={0}
+          custom={1}
           variants={fadeUp}
           initial="hidden"
           animate="show"
@@ -72,7 +94,7 @@ export default function HeroSection() {
 
         {/* Sub-headline */}
         <motion.p
-          custom={1}
+          custom={2}
           variants={fadeUp}
           initial="hidden"
           animate="show"
@@ -84,7 +106,7 @@ export default function HeroSection() {
 
         {/* Vision statement */}
         <motion.div
-          custom={2}
+          custom={3}
           variants={fadeUp}
           initial="hidden"
           animate="show"
@@ -104,7 +126,7 @@ export default function HeroSection() {
 
         {/* Scroll cue */}
         <motion.div
-          custom={3}
+          custom={4}
           variants={fadeUp}
           initial="hidden"
           animate="show"
