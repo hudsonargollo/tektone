@@ -54,26 +54,26 @@ function ValorCard({
       initial={{ opacity: 0, scale: 0.96, y: 20 }}
       animate={inView ? { opacity: 1, scale: 1, y: 0 } : {}}
       transition={{ duration: 0.55, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative rounded-2xl bg-white border border-slate-100 p-7 flex gap-5 items-start transition-all duration-300 hover:border-slate-200 hover:shadow-lg"
+      className="group relative rounded-2xl bg-white border border-slate-200 p-7 flex gap-5 items-start transition-all duration-300 hover:border-slate-300 hover:shadow-xl"
     >
-      {/* Accent left bar */}
+      {/* Accent left bar — always visible, brightens on hover */}
       <div
-        className="absolute left-0 top-6 bottom-6 w-[3px] rounded-r-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        className="absolute left-0 top-5 bottom-5 w-[4px] rounded-r-full opacity-40 group-hover:opacity-100 transition-opacity duration-300"
         style={{ background: valor.accent }}
       />
 
       {/* Icon */}
       <div
         className="shrink-0 w-11 h-11 rounded-xl flex items-center justify-center mt-0.5"
-        style={{ background: `${valor.accent}15`, border: `1px solid ${valor.accent}30` }}
+        style={{ background: `${valor.accent}22`, border: `1.5px solid ${valor.accent}55` }}
       >
-        <Icon className="w-5 h-5" style={{ color: valor.accent }} />
+        <Icon className="w-5 h-5" style={{ color: valor.accent === "#C2FF00" ? "#7a9e00" : valor.accent }} />
       </div>
 
       {/* Text */}
       <div>
         <h3 className="font-bold text-[#002D62] text-base mb-1.5">{valor.title}</h3>
-        <p className="text-[#333333] text-sm leading-[1.75] font-light">{valor.body}</p>
+        <p className="text-slate-600 text-sm leading-[1.8]">{valor.body}</p>
       </div>
     </motion.div>
   );
@@ -84,7 +84,7 @@ export default function ValoresSection() {
   const inView = useInView(ref, { once: true });
 
   return (
-    <section className="py-28 bg-slate-50">
+    <section className="py-28 bg-slate-100">
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <motion.div

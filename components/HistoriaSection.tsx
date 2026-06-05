@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 
 function AnimatedBlock({
   children,
@@ -36,7 +37,7 @@ export default function HistoriaSection() {
         {/* Header */}
         <AnimatedBlock>
           <div className="mb-16 max-w-xl">
-            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#00E5FF] mb-3 block">
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-[#00B8CC] mb-3 block">
               Nossa História
             </span>
             <h2 className="text-4xl sm:text-5xl font-black text-[#002D62] leading-tight">
@@ -51,18 +52,18 @@ export default function HistoriaSection() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Main text card */}
           <AnimatedBlock delay={0.1}>
-            <div className="rounded-2xl border border-slate-100 bg-white shadow-sm p-8 lg:p-10 h-full">
-              <div className="w-10 h-0.5 bg-[#00E5FF] mb-6" />
-              <p className="text-[#333333] text-base sm:text-lg leading-[1.85] font-light">
+            <div className="rounded-2xl border border-slate-200 bg-white shadow-md p-8 lg:p-10 h-full">
+              <div className="w-10 h-0.5 bg-[#00B8CC] mb-6" />
+              <p className="text-slate-700 text-base sm:text-lg leading-[1.85]">
                 Na Grécia Antiga,{" "}
-                <strong className="font-semibold text-[#002D62]">
+                <strong className="font-bold text-[#002D62]">
                   Tekton
                 </strong>{" "}
                 era o mestre construtor e arquiteto. Aquele que transformava
                 matéria bruta em estruturas inabaláveis. A TEKTONE nasceu para
                 resgatar essa essência.
               </p>
-              <p className="mt-5 text-[#333333] text-base sm:text-lg leading-[1.85] font-light">
+              <p className="mt-5 text-slate-700 text-base sm:text-lg leading-[1.85]">
                 Em um cenário onde as empresas lutam para integrar o físico ao
                 digital, nós não entregamos ferramentas soltas. Nós assumimos a
                 complexidade da automação, da tecnologia e da inteligência
@@ -75,24 +76,35 @@ export default function HistoriaSection() {
           <AnimatedBlock delay={0.2}>
             <div className="rounded-2xl bg-[#002D62] p-8 lg:p-10 h-full flex flex-col justify-between relative overflow-hidden">
               {/* Glow */}
-              <div className="absolute top-0 right-0 w-48 h-48 rounded-full bg-[#00E5FF] opacity-10 blur-[60px] pointer-events-none" />
+              <div className="absolute top-0 right-0 w-56 h-56 rounded-full bg-[#00E5FF] opacity-15 blur-[60px] pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-40 h-40 rounded-full bg-[#C2FF00] opacity-8 blur-[60px] pointer-events-none" />
 
-              <div>
-                <span className="text-[#00E5FF] text-xs font-bold tracking-[0.2em] uppercase block mb-6">
-                  Nossa Missão
-                </span>
-                <p className="text-white text-lg sm:text-xl leading-[1.75] font-light italic relative z-10">
+              <div className="relative z-10">
+                {/* Logo watermark */}
+                <div className="flex items-center justify-between mb-8">
+                  <span className="text-[#00E5FF] text-xs font-bold tracking-[0.2em] uppercase">
+                    Nossa Missão
+                  </span>
+                  <Image
+                    src="/logo.webp"
+                    alt="TEKTONE"
+                    width={80}
+                    height={40}
+                    className="h-8 w-auto object-contain opacity-70"
+                  />
+                </div>
+                <p className="text-white text-lg sm:text-xl leading-[1.8] italic font-light">
                   &ldquo;Arquitetar ecossistemas de negócios sob medida e de
                   alta performance que unem o físico e o digital, transformando
                   tecnologia complexa, IA e automação em{" "}
-                  <span className="text-[#C2FF00] not-italic font-semibold">
+                  <span className="text-[#C2FF00] not-italic font-bold">
                     lucro mensurável
                   </span>{" "}
                   e domínio de mercado para nossos parceiros.&rdquo;
                 </p>
               </div>
 
-              <div className="mt-8 w-full h-px bg-gradient-to-r from-[#00E5FF]/40 to-transparent" />
+              <div className="mt-8 w-full h-px bg-gradient-to-r from-[#00E5FF]/50 to-transparent" />
             </div>
           </AnimatedBlock>
         </div>

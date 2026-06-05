@@ -22,7 +22,11 @@
       "Bash(curl -s https://4298be0e.tektone.pages.dev/)",
       "Bash(curl -s -H \"Accept: text/html\" https://4298be0e.tektone.pages.dev/ -D -)",
       "Bash(npm run *)",
-      "Bash(curl -s -H \"Accept: text/html\" https://90e008d8.tektone.pages.dev/ -D -)"
+      "Bash(curl -s -H \"Accept: text/html\" https://90e008d8.tektone.pages.dev/ -D -)",
+      "Bash(find ~/Desktop ~/Downloads ~/Pictures -name \"*tektone*\" -o -name \"*TEKTONE*\" 2>/dev/null | head -10)",
+      "Read(//Users/hudsonargollo/Downloads/**)",
+      "Bash(cp ~/Downloads/tektone-stone-transparent.webp /Users/hudsonargollo/Desktop/PROJETOS/tektone/public/logo.webp)",
+      "Bash(cp ~/Downloads/tektone.webp /Users/hudsonargollo/Desktop/PROJETOS/tektone/public/logo-light.webp)"
     ]
   }
 }

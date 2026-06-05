@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import HistoriaSection from "@/components/HistoriaSection";
 import TriadeSection from "@/components/TriadeSection";
@@ -6,12 +7,15 @@ import CTASection from "@/components/CTASection";
 
 export default function Home() {
   return (
-    <main>
-      <HeroSection />
-      <HistoriaSection />
-      <TriadeSection />
-      <ValoresSection />
-      <CTASection />
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <HeroSection />
+        <HistoriaSection />
+        <TriadeSection />
+        <ValoresSection />
+        <CTASection />
+      </main>
+    </>
   );
 }

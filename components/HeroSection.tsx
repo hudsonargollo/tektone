@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import Image from "next/image";
 
 const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
@@ -56,14 +57,35 @@ export default function HeroSection() {
       </svg>
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        {/* Badge */}
+      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-16">
+        {/* Logo */}
         <motion.div
           custom={0}
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full glass border border-[#00E5FF]/25 text-[#00E5FF] text-xs font-semibold tracking-[0.15em] uppercase"
+          className="flex justify-center mb-10"
+        >
+          <div className="relative">
+            <div className="absolute inset-0 rounded-full bg-[#00E5FF] opacity-10 blur-3xl scale-150 pointer-events-none" />
+            <Image
+              src="/logo.webp"
+              alt="TEKTONE"
+              width={220}
+              height={110}
+              className="relative h-24 w-auto object-contain drop-shadow-[0_0_32px_rgba(0,229,255,0.25)]"
+              priority
+            />
+          </div>
+        </motion.div>
+
+        {/* Badge */}
+        <motion.div
+          custom={1}
+          variants={fadeUp}
+          initial="hidden"
+          animate="show"
+          className="inline-flex items-center gap-2 mb-7 px-4 py-1.5 rounded-full glass border border-[#00E5FF]/30 text-[#00E5FF] text-xs font-bold tracking-[0.18em] uppercase"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
           Sobre Nós
@@ -71,7 +93,7 @@ export default function HeroSection() {
 
         {/* Headline */}
         <motion.h1
-          custom={1}
+          custom={2}
           variants={fadeUp}
           initial="hidden"
           animate="show"
@@ -84,7 +106,7 @@ export default function HeroSection() {
 
         {/* Sub-headline */}
         <motion.p
-          custom={2}
+          custom={3}
           variants={fadeUp}
           initial="hidden"
           animate="show"
@@ -96,7 +118,7 @@ export default function HeroSection() {
 
         {/* Vision statement */}
         <motion.div
-          custom={3}
+          custom={4}
           variants={fadeUp}
           initial="hidden"
           animate="show"
@@ -116,7 +138,7 @@ export default function HeroSection() {
 
         {/* Scroll cue */}
         <motion.div
-          custom={4}
+          custom={5}
           variants={fadeUp}
           initial="hidden"
           animate="show"

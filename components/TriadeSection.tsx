@@ -27,7 +27,7 @@ const team = [
   {
     name: "Alison Aparecido",
     role: "Narrativa e Conversão",
-    title: "Copywriting",
+    title: "CMO",
     icon: PenTool,
     color: "#00E5FF",
     description:
@@ -52,7 +52,7 @@ function TeamCard({
       initial={{ opacity: 0, y: 36 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative rounded-2xl bg-[#001a3a] border border-[#002D62]/60 p-8 flex flex-col gap-5 overflow-hidden transition-all duration-500 hover:border-transparent cursor-default"
+      className="group relative rounded-2xl bg-[#011f45] border border-[#1a4a7a] p-8 flex flex-col gap-5 overflow-hidden transition-all duration-500 hover:border-transparent cursor-default"
       style={
         { "--neon": member.color } as React.CSSProperties
       }
@@ -72,7 +72,7 @@ function TeamCard({
       {/* Icon */}
       <div
         className="w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110"
-        style={{ background: `${member.color}18`, border: `1px solid ${member.color}30` }}
+        style={{ background: `${member.color}25`, border: `1px solid ${member.color}50` }}
       >
         <Icon className="w-6 h-6" style={{ color: member.color }} />
       </div>
@@ -86,17 +86,17 @@ function TeamCard({
           {member.title}
         </p>
         <h3 className="text-xl font-bold text-white leading-tight">{member.name}</h3>
-        <p className="text-sm text-slate-400 mt-0.5">{member.role}</p>
+        <p className="text-sm text-slate-300 mt-0.5 font-medium">{member.role}</p>
       </div>
 
       {/* Divider */}
       <div
-        className="h-px w-full opacity-30 group-hover:opacity-70 transition-opacity duration-300"
+        className="h-px w-full opacity-40 group-hover:opacity-80 transition-opacity duration-300"
         style={{ background: `linear-gradient(to right, ${member.color}, transparent)` }}
       />
 
       {/* Description */}
-      <p className="text-slate-300 text-sm leading-[1.8] font-light">
+      <p className="text-slate-200 text-sm leading-[1.85]">
         {member.description}
       </p>
     </motion.div>
