@@ -7,7 +7,7 @@ import { Gem, TrendingUp, MessageSquare, Layers, Zap } from "lucide-react";
 const valores = [
   {
     icon: Gem,
-    title: "Artesanato Digital",
+    title: "Arquitetura de Precisão",
     body: "Soluções projetadas sob medida com precisão cirúrgica. O genérico não tem espaço aqui.",
     accent: "#00E5FF",
   },

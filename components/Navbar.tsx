@@ -25,15 +25,15 @@ export default function Navbar() {
         }}
       />
 
-      <div className="relative max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="relative max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 shrink-0">
           <Image
             src="/logo.webp"
             alt="TEKTONE"
-            width={140}
-            height={70}
-            className="h-9 w-auto object-contain"
+            width={180}
+            height={90}
+            className="h-14 w-auto object-contain"
             priority
           />
         </a>
