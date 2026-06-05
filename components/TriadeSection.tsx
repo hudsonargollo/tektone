@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import type React from "react";
 import { BarChart3, Cpu, PenTool } from "lucide-react";
 
 const team = [
@@ -52,10 +53,9 @@ function TeamCard({
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
       className="group relative rounded-2xl bg-[#001a3a] border border-[#002D62]/60 p-8 flex flex-col gap-5 overflow-hidden transition-all duration-500 hover:border-transparent cursor-default"
-      style={{
-        // @ts-ignore
-        "--neon": member.color,
-      }}
+      style={
+        { "--neon": member.color } as React.CSSProperties
+      }
     >
       {/* Hover border glow */}
       <div
