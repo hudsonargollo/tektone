@@ -64,16 +64,22 @@ export default function HeroSection() {
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="flex justify-center mb-10"
+          className="flex justify-center mb-12"
         >
           <div className="relative">
-            <div className="absolute inset-0 rounded-full bg-[#00E5FF] opacity-15 blur-[80px] scale-[2] pointer-events-none" />
+            {/* Glow behind logo */}
+            <div className="absolute inset-0 rounded-full bg-white opacity-10 blur-[60px] scale-[1.8] pointer-events-none" />
+            <div className="absolute inset-0 rounded-full bg-[#00E5FF] opacity-20 blur-[100px] scale-[2.2] pointer-events-none" />
             <Image
               src="/logo.webp"
               alt="TEKTONE"
-              width={400}
-              height={200}
-              className="relative h-40 sm:h-48 w-auto object-contain drop-shadow-[0_0_48px_rgba(0,229,255,0.3)]"
+              width={560}
+              height={280}
+              className="relative h-56 sm:h-64 md:h-72 w-auto object-contain"
+              style={{
+                filter:
+                  "brightness(1.6) contrast(1.1) drop-shadow(0 0 24px rgba(255,255,255,0.25)) drop-shadow(0 0 60px rgba(0,229,255,0.35))",
+              }}
               priority
             />
           </div>
