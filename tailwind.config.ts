@@ -11,6 +11,10 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "pillar-blue": "#002D62",
+        "ai-cyan": "#00E5FF",
+        "arch-grey": "#333333",
+        "result-lime": "#C2FF00",
       },
     },
   },
