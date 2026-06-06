@@ -14,9 +14,9 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "TEKTONE — Arquitetos do Seu Domínio Digital",
+  title: "TEKTONE — Engenharia de Soluções e Escala",
   description:
-    "Arquitetamos ecossistemas de negócios sob medida que unem o físico e o digital, transformando IA e automação em lucro mensurável e domínio de mercado.",
+    "Qualquer problema da sua empresa pode ser resolvido em 60 minutos. A TEKTONE identifica o gargalo que trava sua expansão e constrói a solução tecnológica sob medida para eliminá-lo.",
 };
 
 export const runtime = "edge";
@@ -27,9 +27,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-ink-base text-foreground`}
       >
         {children}
       </body>

@@ -26,7 +26,25 @@
       "Bash(find ~/Desktop ~/Downloads ~/Pictures -name \"*tektone*\" -o -name \"*TEKTONE*\" 2>/dev/null | head -10)",
       "Read(//Users/hudsonargollo/Downloads/**)",
       "Bash(cp ~/Downloads/tektone-stone-transparent.webp /Users/hudsonargollo/Desktop/PROJETOS/tektone/public/logo.webp)",
-      "Bash(cp ~/Downloads/tektone.webp /Users/hudsonargollo/Desktop/PROJETOS/tektone/public/logo-light.webp)"
+      "Bash(cp ~/Downloads/tektone.webp /Users/hudsonargollo/Desktop/PROJETOS/tektone/public/logo-light.webp)",
+      "Bash(find ~/.wrangler -name \"*.toml\" -o -name \"*.json\" 2>/dev/null | head -10)",
+      "Bash(curl -s https://api.cloudflare.com/client/v4/zones?account.id=193882a3226d5fb9c3611ea50c95992e -H 'Authorization: Bearer cfoat_0i_7vDp1BXM_nmY3ObcZHM16PDxSQwXkGuUBW4RRStU.U6qsSdvtBRBbhrubgogiUDxLtNUk-nsJAiGiUHOq9uo')",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); [print\\(z['name'],'→',z['id']\\) for z in d.get\\('result',[]\\)] or print\\('No zones found'\\)\")",
+      "Bash(curl -s -X POST https://api.cloudflare.com/client/v4/accounts/193882a3226d5fb9c3611ea50c95992e/pages/projects/tektone/domains -H 'Authorization: Bearer cfoat_0i_7vDp1BXM_nmY3ObcZHM16PDxSQwXkGuUBW4RRStU.U6qsSdvtBRBbhrubgogiUDxLtNUk-nsJAiGiUHOq9uo' -H 'Content-Type: application/json' -d '{\"name\":\"tektone.com.br\"}')",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('✅ OK:', d['result']\\) if d.get\\('success'\\) else print\\('❌', d.get\\('errors'\\)\\)\")",
+      "Bash(curl -s https://api.cloudflare.com/client/v4/accounts/__TRACKED_VAR__/pages/projects/tektone/domains -H 'Authorization: Bearer __TRACKED_VAR__')",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s -X POST https://api.cloudflare.com/client/v4/accounts/193882a3226d5fb9c3611ea50c95992e/pages/projects/tektone/domains -H 'Authorization: Bearer cfoat_0i_7vDp1BXM_nmY3ObcZHM16PDxSQwXkGuUBW4RRStU.U6qsSdvtBRBbhrubgogiUDxLtNUk-nsJAiGiUHOq9uo' -H 'Content-Type: application/json' -d '{\"name\":\"www.tektone.com.br\"}')",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('✅ www added:', d['result']['status']\\) if d.get\\('success'\\) else print\\('❌', d.get\\('errors'\\)\\)\")",
+      "Bash(curl -s https://api.cloudflare.com/client/v4/accounts/193882a3226d5fb9c3611ea50c95992e/pages/projects/tektone/domains -H 'Authorization: Bearer cfoat_0i_7vDp1BXM_nmY3ObcZHM16PDxSQwXkGuUBW4RRStU.U6qsSdvtBRBbhrubgogiUDxLtNUk-nsJAiGiUHOq9uo')",
+      "Bash(curl -s https://api.cloudflare.com/client/v4/zones/a2b3596b3f4a9aaaa043971aa54b0c41/dns_records -H 'Authorization: Bearer cfoat_0i_7vDp1BXM_nmY3ObcZHM16PDxSQwXkGuUBW4RRStU.U6qsSdvtBRBbhrubgogiUDxLtNUk-nsJAiGiUHOq9uo')",
+      "Bash(python3 -m json.tool)",
+      "Bash(dig tektone.com.br +short)",
+      "Bash(dig www.tektone.com.br +short)",
+      "Bash(dig tektone.com.br CNAME +short)",
+      "Bash(dig www.tektone.com.br CNAME +short)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} → %{redirect_url}\" https://tektone.com.br/)",
+      "Bash(curl -s https://tektone.com.br/ -H \"Accept: text/html\")"
     ]
   }
 }

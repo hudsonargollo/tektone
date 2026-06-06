@@ -1,9 +1,12 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import HistoriaSection from "@/components/HistoriaSection";
-import TriadeSection from "@/components/TriadeSection";
-import ValoresSection from "@/components/ValoresSection";
-import CTASection from "@/components/CTASection";
+import AgitacaoSection from "@/components/AgitacaoSection";
+import ProcessoSection from "@/components/ProcessoSection";
+import EntregasSection from "@/components/EntregasSection";
+import AutoridadeSection from "@/components/AutoridadeSection";
+import QualificacaoSection from "@/components/QualificacaoSection";
+import FaqSection from "@/components/FaqSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -11,11 +14,14 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
-        <HistoriaSection />
-        <TriadeSection />
-        <ValoresSection />
-        <CTASection />
+        <AgitacaoSection />
+        <ProcessoSection />
+        <EntregasSection />
+        <AutoridadeSection />
+        <QualificacaoSection />
+        <FaqSection />
       </main>
+      <Footer />
     </>
   );
 }

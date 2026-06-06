@@ -2,151 +2,125 @@
 
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
 const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 32 },
+  hidden: { opacity: 0, y: 28 },
   show: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, delay: i * 0.18, ease: EASE },
+    transition: { duration: 0.7, delay: i * 0.12, ease: EASE },
   }),
 };
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#001233]">
-      {/* Grid dots */}
-      <div className="absolute inset-0 bg-grid opacity-60" />
+    <section
+      id="top"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-ink-base"
+    >
+      {/* Blueprint line mesh */}
+      <div className="absolute inset-0 bp-lines mask-fade" aria-hidden />
+      {/* Subtle dot matrix on top */}
+      <div className="absolute inset-0 bp-dots opacity-40 mask-fade" aria-hidden />
 
-      {/* Radial glow top-center */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full bg-[#002D62] opacity-40 blur-[120px] pointer-events-none" />
+      {/* Cool structural glow — not decorative gradient, simulates light source */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-[-10%] left-1/2 -translate-x-1/2 h-[520px] w-[820px] rounded-full bg-[#002D62] opacity-30 blur-[140px]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute top-[8%] left-1/2 -translate-x-1/2 h-[260px] w-[420px] rounded-full bg-[#00E5FF] opacity-[0.07] blur-[120px]"
+      />
 
-      {/* Cyan glow accent */}
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[300px] rounded-full bg-[#00E5FF] opacity-10 blur-[100px] pointer-events-none" />
-
-      {/* Animated circuit lines */}
-      <svg
-        className="absolute inset-0 w-full h-full opacity-10 pointer-events-none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#00E5FF" stopOpacity="0" />
-            <stop offset="50%" stopColor="#00E5FF" stopOpacity="1" />
-            <stop offset="100%" stopColor="#00E5FF" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-        {[120, 240, 380, 480, 600].map((y, i) => (
-          <motion.line
-            key={i}
-            x1="-100"
-            y1={y}
-            x2="120%"
-            y2={y}
-            stroke="url(#lineGrad)"
-            strokeWidth="1"
-            initial={{ pathLength: 0, opacity: 0 }}
-            animate={{ pathLength: 1, opacity: 0.6 }}
-            transition={{ duration: 2.5, delay: i * 0.4, ease: "easeInOut" }}
-          />
-        ))}
-      </svg>
-
-      {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-24">
-        {/* Logo */}
+      <div className="relative z-10 mx-auto max-w-4xl px-6 pt-28 pb-20 text-center">
+        {/* Logo icon (cropped wordmark off) */}
         <motion.div
           custom={0}
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="flex justify-center mb-12"
+          className="mb-10 flex justify-center"
         >
           <div className="relative">
-            {/* Glow behind logo */}
-            <div className="absolute inset-0 rounded-full bg-white opacity-10 blur-[60px] scale-[1.8] pointer-events-none" />
-            <div className="absolute inset-0 rounded-full bg-[#00E5FF] opacity-20 blur-[100px] scale-[2.2] pointer-events-none" />
-            {/* Overflow-hidden crops the bottom 42% (TEKTONE text) leaving only the icon */}
-            <div className="relative overflow-hidden h-40 sm:h-48 md:h-60">
+            <div
+              aria-hidden
+              className="absolute inset-0 scale-[1.8] rounded-full bg-[#00E5FF] opacity-[0.12] blur-[60px]"
+            />
+            <div className="relative overflow-hidden h-24 sm:h-28">
               <Image
                 src="/logo.webp"
-                alt="TEKTONE icon"
-                width={700}
-                height={700}
+                alt="TEKTONE"
+                width={500}
+                height={500}
+                priority
                 className="h-[calc(100%/0.63)] w-auto object-contain object-top"
                 style={{
                   filter:
-                    "brightness(1.6) contrast(1.1) drop-shadow(0 0 24px rgba(255,255,255,0.25)) drop-shadow(0 0 60px rgba(0,229,255,0.35))",
+                    "brightness(1.6) contrast(1.1) drop-shadow(0 0 18px rgba(255,255,255,0.2)) drop-shadow(0 0 48px rgba(0,229,255,0.3))",
                 }}
-                priority
               />
             </div>
           </div>
         </motion.div>
 
-        {/* Headline */}
-        <motion.h1
+        {/* Eyebrow */}
+        <motion.p
           custom={1}
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="text-5xl sm:text-6xl lg:text-7xl font-black leading-[1.05] tracking-tight text-gradient-hero mb-6"
+          className="label-tech mb-6"
         >
-          Arquitetos do Seu
-          <br />
-          Domínio Digital.
-        </motion.h1>
+          Engenharia de Soluções &amp; Escala
+        </motion.p>
 
-        {/* Sub-headline */}
-        <motion.p
+        {/* Headline — brutal clarity */}
+        <motion.h1
           custom={2}
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed mb-10"
+          className="text-balance text-4xl sm:text-5xl lg:text-[3.75rem] font-bold leading-[1.05] tracking-tightish text-white"
         >
-          Não construímos apenas sistemas. Construímos os alicerces tecnológicos
-          e estratégicos para que o seu negócio domine o mercado.
-        </motion.p>
+          Qualquer problema da sua empresa pode ser{" "}
+          <span className="text-gradient-cyan">resolvido em 60 minutos.</span>
+        </motion.h1>
 
-        {/* Vision statement */}
-        <motion.div
+        {/* Sub-headline */}
+        <motion.p
           custom={3}
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="relative max-w-3xl mx-auto glass-dark rounded-2xl p-6 sm:p-8 mb-12"
+          className="text-pretty mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-zinc-400"
         >
-          <div className="absolute -top-px left-1/2 -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-[#00E5FF] to-transparent" />
-          <p className="text-base sm:text-lg text-slate-200 leading-relaxed italic">
-            &ldquo;Ser o padrão global definitivo em arquitetura de negócios
-            digitais — os mestres construtores nos quais empresas visionárias
-            confiam para projetar seu futuro e forjar legados que desafiam o
-            tempo.&rdquo;
-          </p>
-          <p className="mt-3 text-xs text-[#00E5FF]/70 tracking-widest uppercase font-semibold">
-            Visão TEKTONE
-          </p>
-        </motion.div>
+          A TEKTONE identifica o obstáculo que impede a sua expansão e
+          desenvolve a solução tecnológica sob medida para eliminá-lo.
+        </motion.p>
 
-        {/* Scroll cue */}
+        {/* CTA */}
         <motion.div
           custom={4}
           variants={fadeUp}
           initial="hidden"
           animate="show"
-          className="flex flex-col items-center gap-2 text-slate-500"
+          className="mt-10 flex flex-col items-center gap-4"
         >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+          <a
+            href="#qualificacao"
+            className="group inline-flex items-center gap-2.5 rounded-lg bg-action px-7 py-4 text-base font-bold text-ink-base transition-all duration-200 hover:brightness-110 glow-action"
           >
-            <ArrowDown className="w-5 h-5 text-[#00E5FF]/50" />
-          </motion.div>
+            QUERO MEU DIAGNÓSTICO
+            <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
+          </a>
+          <p className="font-mono text-xs tracking-wide text-zinc-600">
+            vagas restritas por trimestre
+          </p>
         </motion.div>
       </div>
     </section>
