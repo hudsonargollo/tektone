@@ -1,12 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const metrics = [
-  { value: "R$ 9M+", label: "valor de mercado destravado" },
-  { value: "R$ 40k", label: "tráfego operado por dia" },
-  { value: "3", label: "continentes de operação" },
-];
+import AnimatedNumber from "@/components/AnimatedNumber";
 
 export default function AutoridadeSection() {
   return (
@@ -62,22 +57,39 @@ export default function AutoridadeSection() {
               <p className="font-mono text-[11px] tracking-[0.25em] uppercase text-zinc-500">
                 valor de mercado destravado
               </p>
-              <p className="mt-3 font-mono text-5xl sm:text-6xl font-bold tracking-tight text-result-lime tabular-nums">
-                R$ 9M+
-              </p>
+              <AnimatedNumber
+                value={9}
+                prefix="R$ "
+                suffix="M+"
+                className="mt-3 block font-mono text-5xl sm:text-6xl font-bold tracking-tight text-result-lime tabular-nums"
+              />
             </div>
 
             <dl className="mt-8 grid grid-cols-2 gap-6">
-              {metrics.slice(1).map((m) => (
-                <div key={m.label}>
-                  <dt className="font-mono text-3xl font-bold tracking-tight text-white tabular-nums">
-                    {m.value}
-                  </dt>
-                  <dd className="mt-1.5 text-xs leading-snug text-zinc-500">
-                    {m.label}
-                  </dd>
-                </div>
-              ))}
+              <div>
+                <dt>
+                  <AnimatedNumber
+                    value={40}
+                    prefix="R$ "
+                    suffix="k"
+                    className="font-mono text-3xl font-bold tracking-tight text-white tabular-nums"
+                  />
+                </dt>
+                <dd className="mt-1.5 text-xs leading-snug text-zinc-500">
+                  tráfego operado por dia
+                </dd>
+              </div>
+              <div>
+                <dt>
+                  <AnimatedNumber
+                    value={3}
+                    className="font-mono text-3xl font-bold tracking-tight text-white tabular-nums"
+                  />
+                </dt>
+                <dd className="mt-1.5 text-xs leading-snug text-zinc-500">
+                  continentes de operação
+                </dd>
+              </div>
             </dl>
           </motion.div>
         </div>

@@ -44,12 +44,18 @@ export default function ProcessoSection() {
 
         {/* Timeline */}
         <div className="relative grid gap-6 lg:grid-cols-2">
-          {/* Connecting rail */}
+          {/* Connecting rail — draws in on scroll */}
           <div
             aria-hidden
             className="pointer-events-none absolute left-1/2 top-0 hidden h-px w-full -translate-x-1/2 lg:block"
           >
-            <div className="mx-auto h-px w-[60%] bg-gradient-to-r from-action/0 via-action/40 to-action/0" />
+            <motion.div
+              className="mx-auto h-px w-[60%] origin-center bg-gradient-to-r from-action/0 via-action/50 to-action/0"
+              initial={{ scaleX: 0, opacity: 0 }}
+              whileInView={{ scaleX: 1, opacity: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            />
           </div>
 
           {acts.map((act, i) => {

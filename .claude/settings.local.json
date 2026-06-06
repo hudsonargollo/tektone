@@ -44,7 +44,10 @@
       "Bash(dig tektone.com.br CNAME +short)",
       "Bash(dig www.tektone.com.br CNAME +short)",
       "Bash(curl -s -o /dev/null -w \"%{http_code} → %{redirect_url}\" https://tektone.com.br/)",
-      "Bash(curl -s https://tektone.com.br/ -H \"Accept: text/html\")"
+      "Bash(curl -s https://tektone.com.br/ -H \"Accept: text/html\")",
+      "Bash(rm -rf .vercel /Users/hudsonargollo/Library/Preferences/.wrangler/logs/*)",
+      "Bash(rm -rf ~/Library/Caches/typescript ~/.npm/_cacache)",
+      "Bash(rm -rf ~/Library/Caches/ms-playwright ~/Library/Caches/Cypress)"
     ]
   }
 }
